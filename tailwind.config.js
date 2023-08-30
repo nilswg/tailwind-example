@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     important: true,
-    content: ['./index.html'],
+    content: ["./src/**/*.{html,js}", './index.html'],
     theme: {
         extend: {},
         // tabSize: [1, 2, 3, 4, 5].reduce((map, i) => {
