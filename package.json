@@ -3,15 +3,17 @@
   "module": "commonjs",
   "version": "0.0.1",
   "main": "index.js",
-  "dependencies": {},
   "scripts": {
-    "dev": "tailwindcss -i ./input.css -o ./dist/tailwind.css -w",
+    "dev": "concurrently -n tw,serve \"npm run tailwind\" \"npx serve -l 4000\"",
+    "tailwind": "tailwindcss -i ./input.css -o ./dist/tailwind.css -w",
     "build": "tailwindcss build -o ./dist/tailwind.css"
   },
   "devDependencies": {
+    "concurrently": "^8.2.1",
     "prettier": "2.8.8",
     "prettier-plugin-organize-imports": "3.2.3",
     "prettier-plugin-tailwindcss": "0.4.1",
+    "serve": "^14.2.1",
     "tailwindcss": "^3.3.3"
   }
 }
